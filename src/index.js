@@ -27,11 +27,6 @@ export function onLoad() {
       } catch {}
     })	
   );
-  patches.push(
-  	after("getUserBannerURL", findByProps("default", "getUserBannerURL"), ([user]) => {
-		return "";	
-	})
-  );
 }
 
 export const onUnload = () => patches.forEach((u) => u());
