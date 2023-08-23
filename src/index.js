@@ -29,7 +29,7 @@ export function onLoad() {
   );
   patches.push(
   	after("getUserBannerURL", findByProps("default", "getUserBannerURL"), ([user]) => {
-		return undefined	
+		return null;	
 	})
   );
 }
