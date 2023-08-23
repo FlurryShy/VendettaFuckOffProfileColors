@@ -25,11 +25,11 @@ export function onLoad() {
         resp.premiumType = 2;
         resp.bio = decoded.replaceAll(globalColorRegex, "");
       } catch {}
-    })
+    });
 	
 	after("getUserBannerURL", findByProps("default", "getUserBannerURL"), ([user]) => {
 		return undefined	
-	})
+	});
 	
   );
 }
