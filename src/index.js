@@ -29,6 +29,14 @@ export function onLoad() {
       } catch {}
     })	
   );
+	patches.push(
+		after('getUser', 'UserStore', (_, user) => {
+
+		user.avatarDecoration = null;
+		user.avatarDecorationData = user.avatarDecoration;
+
+		})
+	);
 }
 
 export const onUnload = () => patches.forEach((u) => u());
