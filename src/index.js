@@ -23,20 +23,10 @@ export function onLoad() {
 
         resp.themeColors = colors.map((c) => parseInt("0x" + c.slice(1)));
         resp.premiumType = 2;
-		resp.avatarDecoration = null;
-		resp.avatarDecorationData = null;
         resp.bio = decoded.replaceAll(globalColorRegex, "");
       } catch {}
     })	
   );
-	patches.push(
-		after('getUser', 'UserStore', (_, user) => {
-
-		user.avatarDecoration = null;
-		user.avatarDecorationData = user.avatarDecoration;
-
-		})
-	);
 }
 
 export const onUnload = () => patches.forEach((u) => u());
