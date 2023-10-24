@@ -1,5 +1,5 @@
 import { findByStoreName } from "@vendetta/metro";
-import { after, instead  } from "@vendetta/patcher";
+import { after, before, instead  } from "@vendetta/patcher";
 
 const patches = [];
 const colorRegex = /\[(\#[0-9a-fA-F]{6})\s*,\s*(\#[0-9a-fA-F]{6})\]/;
