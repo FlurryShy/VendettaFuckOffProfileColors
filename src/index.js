@@ -1,4 +1,4 @@
-import { findByStoreName } from "@vendetta/metro";
+import { findByStoreName, findByProps } from "@vendetta/metro";
 import { after, before, instead  } from "@vendetta/patcher";
 
 const patches = [];
