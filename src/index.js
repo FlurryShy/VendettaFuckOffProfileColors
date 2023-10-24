@@ -7,6 +7,7 @@ const globalColorRegex = new RegExp(colorRegex, "g");
 
 const UserProfileStore = findByStoreName("UserProfileStore");
 const UserStore = findByStoreName('UserStore');
+const Avatar = findByProps("getStatusSize");
 
 export function onLoad() {
   patches.push(
@@ -32,6 +33,13 @@ export function onLoad() {
       } catch {}
     })	
   );
+  
+
+patches.push(
+	before("type", Avatar.default, function ([props]) {
+	  props.animate = false;
+	})
+);
   
 patches.push(
 	after('getUser', UserStore, (_, user) => {
