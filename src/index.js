@@ -16,6 +16,8 @@ export function onLoad() {
       try {
 
         const decoded = "[#292b2f,#292b2f]";
+		resp.profileEffectID = null;
+		resp.popoutAnimationParticleType = null;
 
         const colors = decoded.match(colorRegex);
         if (!colors) return;
