@@ -6,6 +6,7 @@ const colorRegex = /\[(\#[0-9a-fA-F]{6})\s*,\s*(\#[0-9a-fA-F]{6})\]/;
 const globalColorRegex = new RegExp(colorRegex, "g");
 
 const UserProfileStore = findByStoreName("UserProfileStore");
+const UserStore = findByStoreName('UserStore');
 
 export function onLoad() {
   patches.push(
