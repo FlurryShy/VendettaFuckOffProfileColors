@@ -29,6 +29,11 @@ export function onLoad() {
       } catch {}
     })	
   );
+	patches.push(
+		instead('getAvatarDecorationURL', ImageResolver, (args, orig) => {
+			return null;
+		})
+	);
 }
 
 export const onUnload = () => patches.forEach((u) => u());
