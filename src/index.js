@@ -14,8 +14,6 @@ export function onLoad() {
 
       try {
 
-		resp.avatarDecoration = null;
-
         const decoded = "[#292b2f,#292b2f]";
 
         const colors = decoded.match(colorRegex);
@@ -29,12 +27,7 @@ export function onLoad() {
       } catch {}
     })	
   );
-	patches.push(
-		instead('getAvatarDecorationURL', ImageResolver, (args, orig) => {
-			return null;
-		})
-	);
-	
+
 
 }
 
