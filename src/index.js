@@ -28,6 +28,14 @@ export function onLoad() {
     })	
   );
 
+	patches.push(
+		after('getUser', UserStore, (_, user) => {
+
+			user.avatarDecoration = null;
+			user.avatarDecorationData = user.avatarDecoration;
+
+		})
+	);
 
 }
 
