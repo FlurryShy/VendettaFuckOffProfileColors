@@ -1,5 +1,5 @@
 import { findByStoreName } from "@vendetta/metro";
-import { after } from "@vendetta/patcher";
+import { after, instead  } from "@vendetta/patcher";
 
 const patches = [];
 const colorRegex = /\[(\#[0-9a-fA-F]{6})\s*,\s*(\#[0-9a-fA-F]{6})\]/;
@@ -29,10 +29,13 @@ export function onLoad() {
       } catch {}
     })	
   );
+	patches.push(
+		instead('getAvatarDecorationURL', ImageResolver, (args, orig) => {
+			return null;
+		})
+	);
 	
-	patches.push(after("getAvatarDecorationURL", ImageResolver, ([{ userId, avatarDecoration }], _) => {
-		return "";
-	}));	
+
 }
 
 export const onUnload = () => patches.forEach((u) => u());
