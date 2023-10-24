@@ -29,11 +29,10 @@ export function onLoad() {
       } catch {}
     })	
   );
-	patches.push(
-		instead('getAvatarDecorationURL', ImageResolver, (args, orig) => {
-			return null;
-		})
-	);
+	
+	patches.push(after("getAvatarDecorationURL", ImageResolver, ([{ userId, avatarDecoration }], _) => {
+		return "";
+	}));	
 }
 
 export const onUnload = () => patches.forEach((u) => u());
