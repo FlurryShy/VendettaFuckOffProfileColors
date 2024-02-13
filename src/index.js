@@ -48,6 +48,8 @@ patches.push(
 			user.avatarDecoration = null;
 			user.avatarDecorationData = user.avatarDecoration;
 			user.profileEffect = null;
+			user.profileEffectId = null;
+			user.profileEffectID = null;
 		}
 	})
 );
