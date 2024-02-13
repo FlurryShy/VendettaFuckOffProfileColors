@@ -47,6 +47,7 @@ patches.push(
 		if (user) {
 			user.avatarDecoration = null;
 			user.avatarDecorationData = user.avatarDecoration;
+			user.profileEffect = null;
 		}
 	})
 );
