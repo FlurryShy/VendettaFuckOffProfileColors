@@ -20,6 +20,7 @@ export function onLoad() {
 		resp.banner = null;
 		resp.accentColor = parseInt("0x" + "292b2f");
 		resp.profileEffectID = null;
+		resp.profileEffectId = null;
 		resp.popoutAnimationParticleType = null;
 
         const colors = decoded.match(colorRegex);
