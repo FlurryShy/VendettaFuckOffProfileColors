@@ -30,7 +30,7 @@ export function onLoad() {
 
         resp.themeColors = colors.map((c) => parseInt("0x" + c.slice(1)));
         resp.premiumType = 2;
-        resp.bio = decoded.replaceAll(globalColorRegex, "");
+        // resp.bio = decoded.replaceAll(globalColorRegex, "");
       } catch {}
     })	
   );
